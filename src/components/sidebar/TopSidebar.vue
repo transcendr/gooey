@@ -12,7 +12,7 @@ export default {
   name: 'top-sidebar',
   computed: {
     user () {
-      return this.$store.state.user
+      return this.$store.getters.currentUser
     }
   },
   data () {

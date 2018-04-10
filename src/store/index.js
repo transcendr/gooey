@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import 'es6-promise/auto'
+import userStore from './userStore'
 
 Vue.use(Vuex)
 
@@ -8,6 +9,11 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     user: {}
+  },
+  mutations: {},
+  actions: {},
+  getters: {
+    ...userStore.getters
   }
 })
 
