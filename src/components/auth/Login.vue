@@ -56,7 +56,6 @@ export default {
     doAuth: function () {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
         (user) => {
-          this.$store.state.user = user
           this.$router.replace('/')
         },
         (error) => {

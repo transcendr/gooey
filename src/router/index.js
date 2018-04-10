@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import firebase from 'firebase'
+import store from '@/store'
 import Login from '@/components/auth/Login'
 import Register from '@/components/auth/Register'
 import Gooey from '@/components/Gooey'
@@ -48,9 +49,9 @@ router.beforeEach((to, from, next) => {
   let currentUser = firebase.auth().currentUser
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
   let isLoggingOut = to.matched.some(record => record.meta.isLoggingOut)
-  if (isLoggingOut && currentUser) {
-    this.$store.state.user = currentUser
+  store.state.user = currentUser
 
+  if (isLoggingOut && currentUser) {
     firebase.auth().signOut().then(() => {
       next('login')
     })

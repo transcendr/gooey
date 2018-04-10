@@ -38,7 +38,9 @@ firebase.auth().onAuthStateChanged((user) => {
       router,
       store,
       template: '<App/>',
-      components: { App }
+      components: {
+        App
+      }
     })
   }
 })

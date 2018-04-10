@@ -4,7 +4,7 @@ import 'es6-promise/auto'
 
 Vue.use(Vuex)
 
-// state.user is set in Login.vue / doAuth method
+// state.user is set in router/index.js with the beforeEach hook
 const store = new Vuex.Store({
   state: {
     user: {}
